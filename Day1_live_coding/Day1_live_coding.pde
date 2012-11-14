@@ -1,16 +1,32 @@
+int x = -400;
+int y = -200;
 void setup(){
 //setup the window size
 size(500,500);
+frameRate(120);
 }
 
 void draw(){
+  /*
   noFill();
   line(50, 50, 50, 150);
   arc(75, 75,50, 50,  PI+HALF_PI, HALF_PI);
+*/
+  //increase x
+  x = x + 1;
+  y = x + 1;
+  //check if shape left the screen
+  if (x > width){
+    //if it is out of the screen then start again from the 
+    //newly defined x
+   x = -400; 
+  }
+  if (y > height){
+  y = -200;
+  }
+  
+  translate(x, y);
 
-  
-  
-/*
   background(200);
   noStroke();
 //B
@@ -27,7 +43,7 @@ noStroke();
 rect(230, 135, 70, 30);
 stroke(255);
 line(220, 163, 270, 163);
-*/
+
 
 /*
  line(10, 10, 100, 10);
