@@ -39,7 +39,7 @@ void setup(){
  minim = new Minim(this);
 
 // this loads mysong.wav from the data folder
-song = minim.loadFile("10sec.mp3");
+song = minim.loadFile("10sec.wav");
 song.play();
 }
 
@@ -49,7 +49,7 @@ void draw(){
    image(img1, width/2-70,height/2-myH/2, myW, myH);
    
  }
- if (time ==9 ) {background(200); image(img9, width/2-myW/2,height/2-myH/2, myW, myH);}
+ if (time ==9 ) {background(0); image(img9, width/2-myW/2,height/2-myH/2, myW, myH);}
  if (time ==8 ) image(img8, width/2-myW/2,height/2-myH/2, myW, myH);
  if (time ==7 ) image(img7, width/2-myW/2,height/2-myH/2, myW, myH);
  if (time ==6 ) image(img6, width/2-myW/2,height/2-myH/2, myW, myH);
@@ -58,8 +58,8 @@ void draw(){
  if (time ==3 ) image(img3, width/2-myW/2,height/2-myH/2, myW, myH);
  if (time ==2 ) image(img2, width/2-myW/2,height/2-myH/2, myW, myH);
  if (time ==1 ) image(img1, width/2-myW/2,height/2-myH/2, myW, myH);
- if (time ==0 ) {background(200);text("?", width/2-myW/2,height/2-myH/2);}
- if (time ==-1 ) image(imgK, 0, 0);
+ if (time ==0 ) image(imgK, 0, 0);
+
   
  if (millis() - timer > 1000) {
     time = time - 1;
