@@ -1,32 +1,59 @@
-int x = -400;
-int y = -200;
+float x = 0;
+float y = 0;
+float Rr = 255;
+float Gg = 255;
+float Bb = 255;
+float fr = 5;
+
 void setup(){
-//setup the window size
-size(500,500);
-frameRate(120);
+  //setup the window size
+  size(500,500);
+  
+background(0);
 }
 
 void draw(){
-  /*
-  noFill();
-  line(50, 50, 50, 150);
-  arc(75, 75,50, 50,  PI+HALF_PI, HALF_PI);
-*/
-  //increase x
-  x = x + 1;
-  y = x + 1;
+    //increase x
+  frameRate(fr);
+  fr = fr + 0.2;
+  x = x + random(400);
+  y = y + random(400);
   //check if shape left the screen
   if (x > width){
     //if it is out of the screen then start again from the 
     //newly defined x
-   x = -400; 
+   x = -200; 
   }
   if (y > height){
   y = -200;
   }
   
   translate(x, y);
+  Rr = random(100);
+  Gg = random(20);
+  Bb = random(20);
+  
+  noFill();
+  stroke(255);
+  // B
+  // line
+  line(50, 50, 50, 150);
+  // top half circle
+  arc(50, 75,50, 50,   -HALF_PI, HALF_PI);
+  // bottom half circle
+  arc(50, 125,80, 50,   -HALF_PI, HALF_PI);
+  
+  //G
+  arc(150, 100, 45, 100, 0, PI+HALF_PI+QUARTER_PI);
+  line(150, 100, 172, 100);
+  println(fr);
 
+//stroke(255);
+//line(pmouseX,pmouseY,mouseX,mouseY);
+
+  }
+ 
+/*
   background(200);
   noStroke();
 //B
@@ -43,7 +70,7 @@ noStroke();
 rect(230, 135, 70, 30);
 stroke(255);
 line(220, 163, 270, 163);
-
+*/
 
 /*
  line(10, 10, 100, 10);
@@ -71,7 +98,7 @@ line(220, 163, 270, 163);
 
   
 
-}
+
 /*
 // Excercise 1
 
