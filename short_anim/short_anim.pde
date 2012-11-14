@@ -1,11 +1,10 @@
-int wh = 50;
-int a = 250, b = 300;
+int wh = 80, a = 220, b = 300 ;
 float timer = 0, eh = 50;
 
 void setup(){
   size(600, 600);
   timer = millis();
-  background(200);
+  background(220);
 }
 
 void draw(){
@@ -16,12 +15,11 @@ void draw(){
   rect(a, b, wh, wh);
   rect(b, b, wh, wh);
   ellipse(width/2, height/2, eh, eh);
-  
-  if (millis() - timer > 20){
+  if (millis() - timer > 100){
     a = a - 3;
     b = b + 3;
-    wh = wh + 2;
-    eh = 1.05 * eh;
+    eh = 1.045 * eh;
     timer = millis();
   }
+ 
 }
